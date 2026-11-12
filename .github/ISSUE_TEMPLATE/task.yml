@@ -1,0 +1,75 @@
+name: Task
+description: 1 to 3 days of work on one surface. Must be executable by a human or an AI agent without verbal context.
+title: "[BACKEND]: "
+type: Task
+projects: ["Gurren-Software/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Change the title prefix to match the surface: [BACKEND] [FRONTEND] [MOBILE] [INFRA] [DESIGN] [DOCS].
+        Then set this issue as a sub-issue of its User Story (skip for standalone infra or docs work).
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options: [Backend, Frontend, Mobile, Infra, Design, Docs]
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: One sentence. What exists after this task that did not before.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Files, modules, endpoints to read first. Linked spec. Related issues (full form, e.g. gurren-software/layoros-api#42).
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Each one checkable by a command, a test or an observable state.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: verification
+    attributes:
+      label: Verification
+      description: Exact commands or steps to prove it works.
+      render: shell
+      placeholder: |
+        dotnet test --filter SavedSearches
+        curl -X POST https://staging-api.example/searches -d '{...}'
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+      description: What the implementer, human or agent, must not touch.
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Technical hints, constraints, edge cases. Not a design prescription.
+  - type: checkboxes
+    id: ready
+    attributes:
+      label: Agent-ready check
+      options:
+        - label: Goal fits in one sentence
+        - label: Context lists what to read
+        - label: Every criterion is verifiable
+        - label: Verification gives exact commands
+        - label: Out of scope is explicit

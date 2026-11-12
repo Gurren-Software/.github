@@ -1,0 +1,61 @@
+name: Recette feedback
+description: A User Story failed one acceptance criterion in recette. Create it as a sub-issue of that User Story.
+title: "[BUG]: Recette US#<n> AC<n> - "
+type: Bug
+projects: ["Gurren-Software/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        One criterion per issue. After creating it, add it as a sub-issue of the User Story under test.
+        A missing requirement is not a bug: tell the PO, it becomes a new or amended User Story.
+  - type: input
+    id: story
+    attributes:
+      label: User Story under test
+      placeholder: gurren-software/roadmap#123
+    validations:
+      required: true
+  - type: input
+    id: criterion
+    attributes:
+      label: Failed criterion
+      placeholder: AC2
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: staging URL, test account, device
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps
+      value: |
+        1.
+        2.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected (from the criterion)
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+      description: Screenshots or recording welcome.
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options: [Blocks validation, Minor, Cosmetic]
+    validations:
+      required: true

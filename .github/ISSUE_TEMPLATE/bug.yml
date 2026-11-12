@@ -1,0 +1,59 @@
+name: Bug
+description: A defect found in production, in dev, or reported by a client. For recette rejections, use "Recette feedback".
+title: "[BUG]: "
+type: Bug
+projects: ["Gurren-Software/1"]
+body:
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Origin
+      options: [Production, Dev, Client]
+    validations:
+      required: true
+  - type: dropdown
+    id: surface
+    attributes:
+      label: Surface
+      options: [Backend, Frontend, Mobile, Infra, Design, Docs, Unknown]
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      value: |
+        1.
+        2.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual
+      description: Include error messages, logs, screenshots.
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      placeholder: prod / staging, browser, device, app version
+    validations:
+      required: true
+  - type: checkboxes
+    id: regression
+    attributes:
+      label: Regression
+      options:
+        - label: This worked before
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes

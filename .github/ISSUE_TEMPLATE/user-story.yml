@@ -1,0 +1,56 @@
+name: User Story
+description: One user goal on one client. Sub-issue of an Epic. Create in the roadmap repo.
+title: "[US]: "
+type: User Story
+projects: ["Gurren-Software/1"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options: [Layoros, Kargo, Taxo, Le Roi du Lait, Butler, Hermès, GSW Website, Infra]
+    validations:
+      required: true
+  - type: dropdown
+    id: client
+    attributes:
+      label: Client
+      options: [Web, Back office, Mobile, API only]
+    validations:
+      required: true
+  - type: textarea
+    id: story
+    attributes:
+      label: Story
+      value: |
+        As a <role>,
+        I want <capability>,
+        so that <benefit>.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Numbered and testable. The recette validates each one by number.
+      value: |
+        - [ ] AC1: Given ..., when ..., then ...
+        - [ ] AC2:
+    validations:
+      required: true
+  - type: textarea
+    id: recette
+    attributes:
+      label: Recette setup
+      description: Staging URL, test accounts, seed data needed to validate.
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Designs, edge cases, links.

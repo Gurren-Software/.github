@@ -1,0 +1,45 @@
+name: Epic
+description: A feature inside one product. Holds User Stories only. Create in the roadmap repo.
+title: "[EPIC]: "
+type: Epic
+projects: ["Gurren-Software/1"]
+body:
+  - type: dropdown
+    id: product
+    attributes:
+      label: Product
+      options: [Layoros, Kargo, Taxo, Le Roi du Lait, Butler, Hermès, GSW Website, Infra]
+    validations:
+      required: true
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What business outcome this delivers, in two sentences max.
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: Clients concerned (web, back office, mobile) and the capabilities in scope.
+    validations:
+      required: true
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of scope
+    validations:
+      required: true
+  - type: input
+    id: spec
+    attributes:
+      label: Spec
+      description: Link to specs/<product>/<epic>.md in the roadmap repo, if any.
+  - type: textarea
+    id: success
+    attributes:
+      label: Success criteria
+      description: How we know the Epic is done and worked.
+    validations:
+      required: true
