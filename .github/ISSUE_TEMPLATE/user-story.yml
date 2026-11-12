@@ -8,7 +8,7 @@ body:
     id: product
     attributes:
       label: Product
-      options: [Layoros, Kargo, Taxo, Le Roi du Lait, Butler, Hermès, GSW Website, Infra]
+      options: [Layoros, Schola, Kargo, Taxo, Le Roi du Lait, Butler, Hermès, GSW Website, Infra]
     validations:
       required: true
   - type: dropdown
